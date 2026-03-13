@@ -1,6 +1,7 @@
-#include <stdio.h>
+#include "terminal.h"
 
 int main() {
-    printf("Hello world\n");
+    term_enable_conf();
+
     return 0;
 }
