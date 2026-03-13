@@ -21,3 +21,13 @@ void term_enable_conf() {
     new.c_lflag &= ~(ECHO | ICANON);
     tcsetattr(STDIN_FILENO, TCSAFLUSH, &new);
 }
+
+bool term_get_size(u32 *w, u32 *h) {
+    struct winsize ws;
+    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == 0) {
+        *w = ws.ws_col;
+        *h = ws.ws_row;
+        return true;
+    } else
+        return false;
+}
