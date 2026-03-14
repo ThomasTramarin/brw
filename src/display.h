@@ -33,8 +33,8 @@ typedef struct {
 })
 
 typedef struct {
-    u32 width;  // current width (rows) of the terminal
-    u32 height; // cirrent height (cols) of the terminal
+    u32 width;  // display width
+    u32 height; // display height
 
     // cursor position inside the terminal
     u32 cursor_x;
